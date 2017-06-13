@@ -12,8 +12,8 @@
                         <div class="provider-brand"></div>
                     {{/if}}
                     <p class="lead">
-                        <span>{{if theme.isProvider theme.provider.description (t "index.header.title.paragraph")}}</span>
                         {{#if theme.isProvider}}
+                            {{{theme.provider.description}}}
                             <br>
                             <small>
                                 <a href="https://osf.io/preprints/" onbeforeclick={{action "click" "link" "Index - Powered By"}}>{{t "index.header.powered_by"}}</a>
@@ -98,7 +98,7 @@
         <div class="container">
             <div class="row">
                 {{#if (and theme.isProvider theme.provider.advisoryBoard.length)}}
-                    {{safe-markup theme.provider.advisoryBoard}}
+                    {{{theme.provider.advisoryBoard}}}
                 {{else if (not theme.isProvider)}}
                     <div class="col-xs-12">
                         <h2>{{t "index.advisory.heading"}}</h2>
